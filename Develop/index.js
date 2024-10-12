@@ -1,10 +1,10 @@
 import fs from 'fs/promises';
 import inquirer from 'inquirer';
-import generateMarkdown from './utils/generateMarkdown';
+import generateMarkdown from './generateMarkdown.js';
 
 let fileName = 'dist/README.md';
-// TODO: Create an array of questions for user input
-const questions = [
+// TODONES: Create an array of questions for user input to be passed to inquirer
+const questions = [ 
     {
         name: 'title',
         message: 'What is the title of your project?'
@@ -73,14 +73,14 @@ const questions = [
     }
     ];
 
-// TODO: Create a function to write README file
+// TODONES: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         err ? console.error(err) : console.log("Success!");
     })
 }
 
-// TODO: Create a function to initialize app
+// TODONES: Create a function to initialize app
 function init() {
     inquirer
         .prompt(questions)
